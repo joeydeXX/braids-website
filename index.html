@@ -2,113 +2,206 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Your Business Name | Cornrows &amp; Braids</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500&display=swap">
 <style>
-:root{--img:url(hero.jpg);--bg:#fff;--ink:#111;--mute:#7a7a7a;--line:#e8e8e8;--soft:#f5f5f5;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
-html{scroll-behavior:smooth;scroll-padding-top:64px}
-*,*::before,*::after{box-sizing:inherit}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Archivo,Helvetica,Arial,sans-serif;font-weight:400;font-size:14px;line-height:1.7;letter-spacing:.02em}
+:root{--img:url(hero.jpg);--bg:#fff;--ink:#141414;--mute:#767676;--line:#e6e6e6;--soft:#f5f5f5;color-scheme:light}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 15px/1.7 Archivo,Helvetica,Arial,sans-serif;letter-spacing:.01em}
 a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.up{text-transform:uppercase;letter-spacing:.16em;font-size:11px}
-nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:20px 28px;background:linear-gradient(#fff 55%,rgba(255,255,255,0))}
-nav .logo{font-weight:500}
-nav div{display:flex;gap:26px}
-nav a:hover,.link:hover{text-decoration:underline;text-underline-offset:5px}
-.hero{height:100vh;height:100svh;min-height:520px;background:var(--img) 34% 20%/cover no-repeat;position:relative}
-.hero .cta{position:absolute;left:28px;bottom:calc(32px + env(safe-area-inset-bottom,0px));border-bottom:1px solid var(--ink);padding-bottom:3px}
-.hero .cap{position:absolute;right:28px;bottom:calc(32px + env(safe-area-inset-bottom,0px));color:#fff;mix-blend-mode:difference}
-section{padding:96px 28px;max-width:1280px;margin:0 auto}
-h2{font-weight:300;font-size:clamp(26px,4vw,40px);line-height:1.15;margin:0 0 6px;letter-spacing:0}
-h2 b{font-weight:500}
-.sub{color:var(--mute);margin:0 0 36px;max-width:46ch}
+[hidden]{display:none!important}
+.strip{background:var(--soft);text-align:center;font-size:12px;padding:8px 16px}
+.strip a{text-decoration:underline;text-underline-offset:3px}
+header{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px}
+.logo{font-weight:500;font-size:16px;letter-spacing:.04em}
+.icons{display:flex;gap:4px}
+.ib{background:none;border:0;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;cursor:pointer}
+.ib:hover{background:var(--soft)}
+svg.i{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.pill{display:inline-block;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:11px 24px;font-weight:400;cursor:pointer}
+.pill:hover{background:#333}
+.pill.o{background:#fff;color:var(--ink)}
+.pill.o:hover{background:var(--soft)}
+.hero{aspect-ratio:16/9;max-height:76vh;min-height:320px;width:100%;background:var(--img) 34% 20%/cover no-repeat}
+.intro{text-align:center;padding:48px 24px 72px}
+h1,h2{font-weight:300;line-height:1.15;margin:0;letter-spacing:0}
+h1{font-size:clamp(30px,5vw,52px)}
+h2{font-size:clamp(24px,3.4vw,36px);margin-bottom:8px}
+.intro p{color:var(--mute);margin:12px auto 24px;max-width:46ch}
+.intro .pill{margin:0 4px 8px}
+section{max-width:1280px;margin:0 auto;padding:72px 24px}
+.sub{color:var(--mute);margin:0 0 32px;max-width:46ch}
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.panel .ph{aspect-ratio:4/5;margin-bottom:16px}
+.panel h3{font-weight:400;font-size:18px;margin:0 0 10px}
+.ph{background:var(--soft) var(--img) no-repeat;background-size:auto 260%}
+.p1{background-position:30% 90%}.p2{background-position:34% 30%}.p3{background-position:20% 70%}.p4{background-position:44% 60%}.p5{background-position:26% 100%}.p6{background-position:38% 45%}
 .tabs{display:flex;gap:28px;margin-bottom:32px;border-bottom:1px solid var(--line)}
-.tabs button{background:none;border:0;padding:0 0 12px;font:inherit;color:var(--mute);cursor:pointer;border-bottom:1px solid transparent;margin-bottom:-1px}
+.tabs button{background:none;border:0;padding:0 0 12px;color:var(--mute);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
 .tabs button[aria-selected=true]{color:var(--ink);border-color:var(--ink)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:36px 20px}
-.card[hidden]{display:none}
-.ph{aspect-ratio:4/5;background:var(--soft) var(--img) no-repeat;background-size:auto 260%;margin-bottom:12px}
-.p1{background-position:30% 90%}.p2{background-position:34% 30%}.p3{background-position:20% 70%}.p4{background-position:44% 60%}.p5{background-position:26% 100%}.p6{background-position:38% 45%}
-.card h3{font-weight:400;font-size:14px;margin:0}
+.card .ph{aspect-ratio:4/5;margin-bottom:12px}
+.card h3{font-weight:400;font-size:15px;margin:0}
 .card p{margin:0;color:var(--mute)}
 .note{margin-top:28px;color:var(--mute);font-size:12px}
-.stars{letter-spacing:.3em;margin-bottom:10px}
 .rev{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:48px}
-.rev p{margin:0 0 10px;font-weight:300;font-size:17px;line-height:1.5}
-.rev span{color:var(--mute)}
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:64px}
+.rev p{margin:0 0 8px;font-size:18px;line-height:1.5}
+.rev span{color:var(--mute);font-size:13px}
+.stars{letter-spacing:.3em;margin-bottom:12px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:56px}
 .two p{margin:0 0 16px;max-width:52ch}
-.btn{display:inline-block;background:var(--ink);color:#fff;padding:16px 34px}
-.btn:hover{background:#333}
 details{border-top:1px solid var(--line);padding:16px 0}
 details:last-child{border-bottom:1px solid var(--line)}
 summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between}
-summary::after{content:"+"}details[open] summary::after{content:"\2212"}
 summary::-webkit-details-marker{display:none}
-details p{margin:10px 0 0;color:var(--mute);max-width:60ch}
+summary::after{content:"+"}details[open]>summary::after{content:"\2212"}
+details p{margin:10px 0 0;color:var(--mute)}
 dl{margin:0;display:grid;grid-template-columns:110px 1fr;gap:10px 16px}
 dt{color:var(--mute)}dd{margin:0}
-footer{padding:40px 28px 56px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--mute);font-size:12px}
-@media (max-width:600px){nav{padding:16px 18px}nav div{gap:16px}section{padding:72px 18px}.hero .cta{left:18px}.hero .cap{display:none}footer{padding:32px 18px 48px}}
+footer{background:var(--soft);padding:56px 24px 32px}
+.fcols{max-width:1280px;margin:0 auto 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:32px}
+.fcols h4{margin:0 0 12px;font-weight:500;font-size:14px}
+.fcols a{display:block;color:var(--mute);padding:3px 0}
+.fcols a:hover,.strip a:hover{color:var(--ink)}
+.fine{max-width:1280px;margin:0 auto;color:var(--mute);font-size:12px}
+.layer{position:fixed;z-index:10;background:#fff}
+.full{inset:0;overflow:auto;padding:0 24px 48px}
+.top{display:flex;justify-content:space-between;align-items:center;height:64px}
+.menu{max-width:640px;margin:0 auto}
+.menu>a,.menu summary{display:flex;justify-content:space-between;font-size:26px;padding:12px 0;border:0}
+.menu details{border:0;padding:0}
+.menu details a{display:block;font-size:18px;color:var(--mute);padding:6px 0 6px 16px}
+.menu a:hover,.menu summary:hover{color:var(--mute)}
+.menu .pill{margin-top:24px;font-size:15px}
+.sbox{max-width:640px;margin:0 auto}
+.sbox input{width:100%;border:0;border-bottom:1px solid var(--ink);padding:12px 0;font:inherit;font-size:22px;background:none;border-radius:0}
+.sbox input:focus-visible{outline:0}
+.res a{display:block;padding:12px 0;border-bottom:1px solid var(--line)}
+.res small{display:block;color:var(--mute)}
+.pop{top:68px;right:16px;width:min(320px,calc(100vw - 32px));border:1px solid var(--line);box-shadow:0 8px 28px rgba(0,0,0,.08);padding:24px;border-radius:12px}
+.pop h3{margin:0 0 6px;font-weight:500;font-size:16px}
+.pop p{margin:0 0 16px;color:var(--mute)}
+.pop .pill{display:block;text-align:center;margin-bottom:8px}
+@media (max-width:600px){header{padding:0 12px}section{padding:56px 18px}.intro{padding:36px 18px 56px}.panels{gap:10px}.full{padding:0 18px 48px}.menu>a,.menu summary{font-size:22px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<nav class="up"><a class="logo" href="#top">Your Business Name</a><div><a href="#styles">Styles</a><a href="#book">Book</a><a href="#about">About</a><a href="#contact">Contact</a></div></nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="s" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+<symbol id="u" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></symbol>
+<symbol id="c" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></symbol>
+<symbol id="m" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></symbol>
+</svg>
 
-<header class="hero" id="top" role="img" aria-label="Model wearing long knotless braids with cornrows at the front">
-<a class="cta up" href="#book">Book now</a>
-<span class="cap up">Cornrows &amp; braids</span>
+<div class="strip">Now booking. <a href="https://wa.me/0000000000">Message us on WhatsApp</a></div>
+
+<header>
+<a class="logo" href="#top">Your Business Name</a>
+<div class="icons">
+<button class="ib" data-open="search" aria-label="Search" aria-expanded="false"><svg class="i"><use href="#s"/></svg></button>
+<button class="ib" data-open="profile" aria-label="My appointments" aria-expanded="false"><svg class="i"><use href="#u"/></svg></button>
+<a class="ib" href="#book" aria-label="Book an appointment"><svg class="i"><use href="#c"/></svg></a>
+<button class="ib" data-open="menu" aria-label="Open menu" aria-expanded="false"><svg class="i"><use href="#m"/></svg></button>
+</div>
 </header>
 
-<main>
+<div class="layer full" id="menu" hidden role="dialog" aria-label="Menu">
+<div class="top"><span class="logo">Menu</span><button class="ib" data-close aria-label="Close menu"><svg class="i"><use href="#x"/></svg></button></div>
+<nav class="menu">
+<a href="#top">Home</a>
+<details><summary>Styles</summary>
+<a href="#styles" data-tab="women">Women</a><a href="#styles" data-tab="men">Men</a><a href="#styles" data-tab="kids">Kids</a>
+</details>
+<a href="#reviews">Reviews</a>
+<a href="#about">About us</a>
+<a href="#faq">Questions and answers</a>
+<a href="#book">Book an appointment</a>
+<a href="#contact">Contact</a>
+<a class="pill" href="https://wa.me/0000000000">Message on WhatsApp</a>
+</nav>
+</div>
+
+<div class="layer full" id="search" hidden role="dialog" aria-label="Search">
+<div class="top"><span class="logo">Search</span><button class="ib" data-close aria-label="Close search"><svg class="i"><use href="#x"/></svg></button></div>
+<div class="sbox">
+<input type="search" id="q" placeholder="Search styles" autocomplete="off" aria-label="Search styles">
+<div class="res" id="res"></div>
+</div>
+</div>
+
+<div class="layer pop" id="profile" hidden role="dialog" aria-label="My appointments">
+<h3>My appointments</h3>
+<p>To book, change or cancel an appointment, send us a message.</p>
+<a class="pill" href="https://wa.me/0000000000">Message on WhatsApp</a>
+<a class="pill o" href="#book">See booking details</a>
+</div>
+
+<main id="top">
+<div class="hero" role="img" aria-label="Model wearing long knotless braids with cornrows at the front"></div>
+<div class="intro">
+<h1>Cornrows and braids</h1>
+<p>Neat parts, comfortable tension and a finish that lasts. Every style is braided by hand.</p>
+<a class="pill" href="#book">Book now</a><a class="pill o" href="#styles">Learn more</a>
+</div>
+
+<section style="padding-top:0">
+<div class="panels">
+<div class="panel"><div class="ph p2"></div><h3>Women’s styles</h3><a class="pill" href="#styles" data-tab="women">Learn more</a></div>
+<div class="panel"><div class="ph p5"></div><h3>Men’s styles</h3><a class="pill" href="#styles" data-tab="men">Learn more</a></div>
+</div>
+</section>
+
 <section id="styles">
-<h2>Our <b>styles</b></h2>
-<p class="sub">Every style is braided by hand. Choose one, then book it with a message.</p>
-<div class="tabs up" role="tablist">
+<h2>Our styles</h2>
+<p class="sub">Choose a style, then book it with a message.</p>
+<div class="tabs" role="tablist">
 <button role="tab" aria-selected="true" data-c="women">Women</button>
 <button role="tab" aria-selected="false" data-c="men">Men</button>
 <button role="tab" aria-selected="false" data-c="kids">Kids</button>
 </div>
 <div class="grid">
-<a class="card" data-c="women" href="#book"><div class="ph p1"></div><h3>Straight back cornrows</h3><p>From 000 · about 2 hrs</p></a>
-<a class="card" data-c="women" href="#book"><div class="ph p2"></div><h3>Feed-in cornrows</h3><p>From 000 · about 4 hrs</p></a>
-<a class="card" data-c="women" href="#book"><div class="ph p3"></div><h3>Stitch cornrows</h3><p>From 000 · about 4 hrs</p></a>
-<a class="card" data-c="women" href="#book"><div class="ph p4"></div><h3>Cornrows with knotless braids</h3><p>From 000 · about 6 hrs</p></a>
-<a class="card" data-c="men" href="#book" hidden><div class="ph p5"></div><h3>Men's straight back</h3><p>From 000 · about 1.5 hrs</p></a>
-<a class="card" data-c="men" href="#book" hidden><div class="ph p6"></div><h3>Men's patterned cornrows</h3><p>From 000 · about 2.5 hrs</p></a>
-<a class="card" data-c="kids" href="#book" hidden><div class="ph p1"></div><h3>Kids straight back</h3><p>From 000 · about 1.5 hrs</p></a>
-<a class="card" data-c="kids" href="#book" hidden><div class="ph p4"></div><h3>Kids patterned cornrows</h3><p>From 000 · about 2 hrs</p></a>
+<a class="card" data-c="women" href="#book"><div class="ph p1"></div><h3>Straight back cornrows</h3><p>From 000, about 2 hrs</p></a>
+<a class="card" data-c="women" href="#book"><div class="ph p2"></div><h3>Feed-in cornrows</h3><p>From 000, about 4 hrs</p></a>
+<a class="card" data-c="women" href="#book"><div class="ph p3"></div><h3>Stitch cornrows</h3><p>From 000, about 4 hrs</p></a>
+<a class="card" data-c="women" href="#book"><div class="ph p4"></div><h3>Cornrows with knotless braids</h3><p>From 000, about 6 hrs</p></a>
+<a class="card" data-c="men" href="#book" hidden><div class="ph p5"></div><h3>Men’s straight back</h3><p>From 000, about 1.5 hrs</p></a>
+<a class="card" data-c="men" href="#book" hidden><div class="ph p6"></div><h3>Men’s patterned cornrows</h3><p>From 000, about 2.5 hrs</p></a>
+<a class="card" data-c="kids" href="#book" hidden><div class="ph p1"></div><h3>Kids straight back</h3><p>From 000, about 1.5 hrs</p></a>
+<a class="card" data-c="kids" href="#book" hidden><div class="ph p4"></div><h3>Kids patterned cornrows</h3><p>From 000, about 2 hrs</p></a>
 </div>
 <p class="note">Placeholder names, prices and photos. Replace each photo with a photo of your own work.</p>
 </section>
 
 <section id="reviews">
-<div class="stars">★★★★★</div>
+<div class="stars" aria-label="Five stars">★★★★★</div>
 <div class="rev">
-<div><p>“Placeholder review. Add a real client quote here.”</p><span class="up">Client name</span></div>
-<div><p>“Placeholder review. Add a real client quote here.”</p><span class="up">Client name</span></div>
-<div><p>“Placeholder review. Add a real client quote here.”</p><span class="up">Client name</span></div>
+<div><p>“Placeholder review. Add a real client quote here.”</p><span>Client name</span></div>
+<div><p>“Placeholder review. Add a real client quote here.”</p><span>Client name</span></div>
+<div><p>“Placeholder review. Add a real client quote here.”</p><span>Client name</span></div>
 </div>
 </section>
 
 <section id="about">
 <div class="two">
-<div><h2>About <b>us</b></h2></div>
+<div><h2>About us</h2></div>
 <div>
 <p>Placeholder text. Write two or three sentences about your mum: how long she has been braiding, what she is known for, and what clients can expect when they sit in her chair.</p>
-<p>Neat parts, comfortable tension and a finish that lasts.</p>
+<a class="pill o" href="#contact">Learn more</a>
 </div>
 </div>
 </section>
 
 <section id="book">
 <div class="two">
-<div><h2>Book an <b>appointment</b></h2><p class="sub">Send us a message with the style you want and your preferred day.</p><a class="btn up" href="https://wa.me/0000000000">Message on WhatsApp</a></div>
-<div>
+<div><h2>Book an appointment</h2><p class="sub">Send us a message with the style you want and your preferred day.</p><a class="pill" href="https://wa.me/0000000000">Message on WhatsApp</a></div>
+<div id="faq">
 <details><summary>How should I prepare my hair?</summary><p>Placeholder answer. For example: come with clean, detangled, dry hair.</p></details>
 <details><summary>How long will it take?</summary><p>Placeholder answer. Times are listed on each style and depend on hair length and thickness.</p></details>
 <details><summary>Do you ask for a deposit?</summary><p>Placeholder answer.</p></details>
@@ -119,23 +212,52 @@ footer{padding:40px 28px 56px;border-top:1px solid var(--line);display:flex;just
 
 <section id="contact">
 <div class="two">
-<div><h2><b>Contact</b></h2></div>
+<div><h2>Contact</h2></div>
 <dl>
-<dt class="up">WhatsApp</dt><dd>+000 000 000 000</dd>
-<dt class="up">Instagram</dt><dd>@yourbusiness</dd>
-<dt class="up">Location</dt><dd>Your address or area</dd>
-<dt class="up">Hours</dt><dd>Monday to Saturday, 8am to 6pm</dd>
+<dt>WhatsApp</dt><dd>+000 000 000 000</dd>
+<dt>Instagram</dt><dd>@yourbusiness</dd>
+<dt>Location</dt><dd>Your address or area</dd>
+<dt>Hours</dt><dd>Monday to Saturday, 8am to 6pm</dd>
 </dl>
 </div>
 </section>
 </main>
 
-<footer class="up"><span>© Your Business Name</span><a href="#top">Back to top</a></footer>
+<footer>
+<div class="fcols">
+<div><h4>Styles</h4><a href="#styles" data-tab="women">Women</a><a href="#styles" data-tab="men">Men</a><a href="#styles" data-tab="kids">Kids</a></div>
+<div><h4>Help</h4><a href="#faq">Questions and answers</a><a href="#book">Book an appointment</a><a href="#contact">Contact</a></div>
+<div><h4>About</h4><a href="#about">About us</a><a href="#reviews">Reviews</a></div>
+<div><h4>Follow</h4><a href="https://wa.me/0000000000">WhatsApp</a><a href="https://instagram.com/yourbusiness">Instagram</a></div>
+</div>
+<div class="fine">© Your Business Name. <a href="#top" style="text-decoration:underline">Back to top</a></div>
+</footer>
 
 <script>
-(function(){var t=document.querySelectorAll('.tabs button'),c=document.querySelectorAll('.card');
-t.forEach(function(b){b.addEventListener('click',function(){t.forEach(function(x){x.setAttribute('aria-selected',x===b)});
-c.forEach(function(k){k.hidden=k.dataset.c!==b.dataset.c})})})})();
+(function(){
+var $=function(s,e){return (e||document).querySelector(s)},$$=function(s,e){return [].slice.call((e||document).querySelectorAll(s))};
+var tabs=$$('.tabs button'),cards=$$('.card'),layers=$$('.layer'),opens=$$('[data-open]');
+function tab(c){tabs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.c===c)});cards.forEach(function(k){k.hidden=k.dataset.c!==c})}
+function closeAll(){layers.forEach(function(l){l.hidden=true});opens.forEach(function(b){b.setAttribute('aria-expanded','false')});document.body.style.overflow=''}
+tabs.forEach(function(b){b.addEventListener('click',function(){tab(b.dataset.c)})});
+$$('[data-tab]').forEach(function(a){a.addEventListener('click',function(){tab(a.dataset.tab)})});
+opens.forEach(function(b){b.addEventListener('click',function(){
+var l=$('#'+b.dataset.open),was=!l.hidden;closeAll();if(was)return;
+l.hidden=false;b.setAttribute('aria-expanded','true');
+if(l.classList.contains('full'))document.body.style.overflow='hidden';
+var i=$('input',l);if(i)i.focus()})});
+$$('[data-close]').forEach(function(b){b.addEventListener('click',closeAll)});
+layers.forEach(function(l){l.addEventListener('click',function(e){if(e.target.closest('a'))closeAll()})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll()});
+var q=$('#q'),res=$('#res');
+q.addEventListener('input',function(){
+var v=q.value.trim().toLowerCase();res.innerHTML='';if(!v)return;
+var f=cards.filter(function(k){return $('h3',k).textContent.toLowerCase().indexOf(v)>-1});
+if(!f.length){res.textContent='No styles found. Try a different word.';return}
+f.forEach(function(k){var a=document.createElement('a');a.href='#styles';
+a.innerHTML=$('h3',k).textContent+'<small>'+k.dataset.c.charAt(0).toUpperCase()+k.dataset.c.slice(1)+'</small>';
+a.addEventListener('click',function(){tab(k.dataset.c)});res.appendChild(a)})});
+})();
 </script>
 </body>
 </html>
